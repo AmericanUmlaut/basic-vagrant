@@ -1,0 +1,6 @@
+*.log
+typo3/*
+/.vagrant/
+/.idea/
+
+!.gitkeep
