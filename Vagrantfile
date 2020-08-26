@@ -62,8 +62,10 @@ Vagrant.configure(2) do |config|
     install_package php7.4-zip
     install_package php7.4-intl
     install_package php7.4-mysqli
+    install_package php7.4-imap
     install_package mysql-server
     install_package unzip # Makes Composer happy, otherwise it has to use PHP to decompress downloaded files
+    install_package install_package imagemagick # Required by the TYPO3 introduction package
 
     echo "Installing Composer..."
         curl -sS https://getcomposer.org/installer | php
@@ -124,5 +126,9 @@ Vagrant.configure(2) do |config|
     echo "Done generating Typo3 project"
 
 
+  SHELL
+
+  config.vm.provision :shell, run: 'always', inline: <<-SHELL
+      systemctl restart apache2
   SHELL
 end
