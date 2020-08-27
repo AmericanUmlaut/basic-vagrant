@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
   end
 
   # Set the machine's hostname on boot
-  config.vm.hostname="ENO-SHOP"
+  config.vm.hostname="ENO-SITE"
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -105,13 +105,13 @@ Vagrant.configure(2) do |config|
     # each file instead of just looping.
     echo "Symlinking files from sysfiles/ into place"
         replace_with_link /home/vagrant/.bash_profile
-        replace_with_link /etc/php/7.4/mods-available/eno-shop.ini
+        replace_with_link /etc/php/7.4/mods-available/eno-site.ini
         replace_with_link /etc/apache2/sites-enabled/000-default.conf
     echo "Done symlinking sysfiles/"
 
     echo "Configuring PHP"
-        ln -s /etc/php/7.4/mods-available/eno-shop.ini /etc/php/7.4/apache2/conf.d/99-eno-shop.ini
-        ln -s /etc/php/7.4/mods-available/eno-shop.ini /etc/php/7.4/cli/conf.d/99-eno-shop.ini
+        ln -s /etc/php/7.4/mods-available/eno-site.ini /etc/php/7.4/apache2/conf.d/99-eno-site.ini
+        ln -s /etc/php/7.4/mods-available/eno-site.ini /etc/php/7.4/cli/conf.d/99-eno-site.ini
     echo "Done configuring PHP"
 
     echo "Restarting services"
