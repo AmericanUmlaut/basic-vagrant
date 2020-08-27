@@ -52,17 +52,17 @@ Vagrant.configure(2) do |config|
     add-apt-repository -y ppa:ondrej/php
     apt-get update
     install_package php7.4
-    install_package php7.4-dev
-    install_package php7.4-xdebug
     install_package php7.4-curl
-    install_package php7.4-mbstring
-    install_package php7.4-soap
-    install_package php7.4-xml
+    install_package php7.4-dev
     install_package php7.4-gd
-    install_package php7.4-zip
-    install_package php7.4-intl
-    install_package php7.4-mysqli
     install_package php7.4-imap
+    install_package php7.4-intl
+    install_package php7.4-mbstring
+    install_package php7.4-mysqli
+    install_package php7.4-soap
+    install_package php7.4-xdebug
+    install_package php7.4-xml
+    install_package php7.4-zip
     install_package mysql-server
     install_package unzip # Makes Composer happy, otherwise it has to use PHP to decompress downloaded files
     install_package install_package imagemagick # Required by the TYPO3 introduction package
